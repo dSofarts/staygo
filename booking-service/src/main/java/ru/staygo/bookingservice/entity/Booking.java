@@ -1,0 +1,38 @@
+package ru.staygo.bookingservice.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+import ru.staygo.bookingservice.entity.enums.BookingStatus;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Entity
+@Table(name = "booking")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Booking {
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
+  @ManyToOne
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
+  @Column(nullable = false)
+  private UUID roomId;
+  @Column(nullable = false)
+  private LocalDate startDate;
+  @Column(nullable = false)
+  private LocalDate endDate;
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  private BookingStatus status;
+  @Column(nullable = false)
+  private LocalDateTime createdAt;
+  @Column(unique = true)
+  private UUID requestId;
+}
