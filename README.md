@@ -59,9 +59,9 @@
 4. Доступ к сервисам:
 
     - Eureka Server: `http://localhost:8761`
-    - API Gateway: `http://localhost:8080`
-    - Hotel Service: `http://localhost:8081/hotels`
-    - Booking Service: `http://localhost:8082/bookings`
+    - API Gateway: `http://localhost:8081`
+    - Hotel Service: `http://localhost:8082/hotels`
+    - Booking Service: `http://localhost:8083/bookings`
 
 5. Тестирование API:
 
